@@ -1,0 +1,24 @@
+{
+  "name": "Assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dataReader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMayo64/Advanced_Database_Systems.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CMayo64/Advanced_Database_Systems/issues"
+  },
+  "homepage": "https://github.com/CMayo64/Advanced_Database_Systems#readme",
+  "dependencies": {
+    "comma-number": "^2.0.1",
+    "mongodb": "^3.6.3"
+  }
+}
