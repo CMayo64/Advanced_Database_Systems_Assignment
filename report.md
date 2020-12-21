@@ -7,6 +7,8 @@ Link to your hosted Git Repository should include:
 INTRODUCTION:
 Should pull together & summmarise entire project. Should include background & inspiration that lead me to undertake this project. You may, want to pull in stats to underpin your argument as to why this project was required.
 
+I have created a system that tracks my fitness activity. It tells me what exercise I have done, at what time I did the exercise, How long I should spend on each exercise and how long I actually spent on them. I decided to do this project as I have tried to follow fitness plans before in order to get into shape, but I have always failed due to loss of motivation and me losing track of what exercises I have done as I never really had a way to track what I was doing.
+
 A system to track my fitness activity (fitness planner). I.e, What exercise i'm doing, When i'm doing it, How long I should spend on each exercise and How long I actually spent on each exercise. Decided to do this project as I have tried to do fitness plans before in ordre to get into shape, but I have always failed (lost motivation, lost track) as I never had a way to really track what I was doing when. 
 
 
