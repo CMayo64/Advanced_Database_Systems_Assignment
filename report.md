@@ -15,7 +15,7 @@ A system to track my fitness activity (fitness planner). I.e, What exercise i'm 
 SYSTEM OVERVIEW:
 High-level overview of how system functions, can use screen shots if it helps. Should consider aspects like:
 - Briefly describing all datastores including databases, file systems & media data stores.
-- Key biews & interfaces.
+- Key views & interfaces.
 - Including a diagram of the key system components & how they are linked.
 
 KEY DESIGN DECISIONS
