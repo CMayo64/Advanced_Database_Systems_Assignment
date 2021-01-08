@@ -1,8 +1,14 @@
-const http = require ("http");
+const http = require("http");
 const server = http.createServer();
 
 server.on("request", (req, res) => {
-    const {method, url, heeaders } = req;
+  const { method, url, headers } = req;
 
-    
-})
+  console.log(method);
+  console.log(url);
+  console.log(headers);
+
+  res.end("hello world");
+});
+
+server.listen(8080);
