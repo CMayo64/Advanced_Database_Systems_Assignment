@@ -21,12 +21,10 @@ async function main() {
         await collection.insertMany(JSON.parse(wineTastingData));
         const count = await collection.find().count;
         console.log(
-            `there are ${commaNumber(count)} records this took ${
+            `there are ${commaNumber(count)} records, this took ${
                 (Date.now() - start) / 1000}
                  seconds to execute`);
-
         process.exit();
     }   catch (error) {
-
     }
 }
