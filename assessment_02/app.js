@@ -13,7 +13,7 @@ const User = require("./models/User");
  * Controllers (route handlers).
  */
 const tasterController = require("./controllers/taster");
-const tastingController = require("./controllers/tasting");
+const tastingController = require("./controllers/workout");
 const homeController = require("./controllers/home");
 const userController = require("./controllers/user");
 

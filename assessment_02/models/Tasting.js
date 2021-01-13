@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const tastingSchema = new Schema(
+const workoutSchema = new Schema(
   {
     points: Number,
     title: String,
