@@ -19,7 +19,6 @@ High-level overview of how system functions, can use screen shots if it helps. S
 
 KEY DESIGN DECISIONS
 One of the key decisions I made when designing my app was to 
-
 Should rationalise the choices you made in designing your app
 
 DATABASE DESIGN:
