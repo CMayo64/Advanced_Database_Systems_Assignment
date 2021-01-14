@@ -27,7 +27,7 @@ async function main() {
      * This is just a fun little loader module that displays a spinner
      * to the command line
      */
-    const load = loading("importing your gym data!!").start();
+    const load = loading("importing the gym data!!").start();
 
     /**
      * Import the JSON data into the database
@@ -47,7 +47,7 @@ async function main() {
       {
         $group: {
           _id: "$gym_user_name",
-          twitter: { $first: "$taster_twitter_handle" },
+          twitter: { $first: "$twitter_handle" },
           workouts: { $sum: 1 },
         },
 
@@ -64,7 +64,7 @@ async function main() {
   
     load.stop();
     console.info(
-      `Gym collection set up! \n I've also created a workouts collection for you`
+      `Gym collection set up! \n I've also created a workouts collection`
     );
 
     process.exit();
