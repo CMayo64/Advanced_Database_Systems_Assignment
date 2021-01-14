@@ -14,7 +14,7 @@ async function main() {
   try {
     await client.connect();
     const db = client.db();
-    const results = await db.collection("workouts").find({}).count();
+    const results = await db.collection("workout-records").find({}).count();
 
     /**
      * If existing records then delete the current collections
@@ -34,15 +34,15 @@ async function main() {
      */
 
     const data = await fs.readFile(path.join(__dirname, "fitness.json"), "utf8");
-    await db.collection("workouts").insertMany(JSON.parse(data));
+    await db.collection("workout-records").insertMany(JSON.parse(data));
 
     /**
      * This perhaps appears a little more complex than it is. Below, we are
-     * grouping the wine tasters and summing their total workouts. Finally,
+     * grouping the wine tasters and summing their total workout-records. Finally,
      * we tnamey up the output so it represents the format we need for our new collection
      */
 
-    const gymUsersRef = await db.collection("workouts").aggregate([
+    const gymUsersRef = await db.collection("workouts-records").aggregate([
       { $match: { gym_user_name: { $ne: null } } },
       {
         $group: {

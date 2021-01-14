@@ -8,7 +8,6 @@ const countriesModel = require("./models/Country");
 const expressSession = require("express-session");
 const User = require("./models/User");
 
-
 /**
  * Controllers (route handlers).
  */
@@ -30,9 +29,6 @@ const { PORT, MONGODB_URI } = process.env;
  * connect to database
  */
 
-
-
-
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 mongoose.connection.on("error", (err) => {
   console.error(err);
@@ -51,7 +47,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }))
-
 
 app.use("*", async (req, res, next) => {
   global.user = false;
@@ -89,11 +84,9 @@ app.get("/tasters/delete/:id", tasterController.delete);
 app.get("/tasters/update/:id", tasterController.edit);
 app.post("/tasters/update/:id", tasterController.update);
 
-
 app.get("/create-tasting", tastingController.createView);
 app.post("/create-tasting", tastingController.create);
 app.get("/update-tasting/:id", tastingController.edit);
-
 
 app.get("/tastings", tastingController.list);
 app.get("/tastings/delete/:id", tastingController.delete);
@@ -107,7 +100,6 @@ app.get("/login", (req, res) => {
   res.render('login-user', { errors: {} })
 });
 app.post("/login", userController.login);
-
 
 app.listen(PORT, () => {
   console.log(
