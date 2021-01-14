@@ -22,14 +22,19 @@ High-level overview of how system functions, can use screen shots if it helps. S
 - Including a diagram of the key system components & how they are linked.
 
 KEY DESIGN DECISIONS
-One of the key decisions I made when designing my app was to 
+One of the key decisions I made when designing my app was to... 
+
 Should rationalise the choices you made in designing your app
 
 DATABASE DESIGN:
-This will document the different databse entities & how they are related. If using a relational database may want to include an entity relationship diagram.
+This will document the different database entities & how they are related. If using a relational database may want to include an entity relationship diagram.
 
 SECURITY AND SCALABILITY:
+My database is quite secure, because in order to be able to access it (to modify it at all) you need to have an admin username, and password that only I have. 
+
 Identify in what ways your app is secure & scalable.
 
 CONCLUSION AND REFLECTION:
+Overall this project challenged me to use everything that I have learnt on the course to create my web app. As well as eeverything I learnt in class it also challenged me to think outside the box about how to go about creating a web app from scratch.
+
 Bring document to a close by tying together the process, and provide me with a brief reflective account of the entire project.

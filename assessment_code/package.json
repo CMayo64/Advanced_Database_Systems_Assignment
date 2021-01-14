@@ -27,6 +27,7 @@
     "loading-cli": "^1.1.0",
     "md5": "^2.3.0",
     "mongodb": "^3.6.2",
-    "mongoose": "^5.10.10"
+    "mongoose": "^5.11.11",
+    "mongoose-update-if-current": "^1.4.0"
   }
 }

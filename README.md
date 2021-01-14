@@ -1,2 +1,2 @@
 # Advanced_Database_Systems_Assignment
-In order to run the app in the command line, you must first download the keroku CLI. Here is a link to download the heroku CLI: https://devcenter.heroku.com/articles/heroku-cli . Once you have downloaded the heroku CLI you can then login into heroku there using the command "heroku login". 
+In order to run the project in the command line, you must first download the heroku CLI. Here is a link to download the heroku CLI: https://devcenter.heroku.com/articles/heroku-cli. Once you have downloaded the heroku CLI you can then login into heroku there using the command "heroku login". 

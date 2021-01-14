@@ -20,7 +20,6 @@ exports.delete = async (req, res) => {
     });
   }
 };
-
 exports.create = async (req, res) => {
   try {
     const Gymuser = new GymUser({ name: req.body.name, twitter: req.body.twitter });
