@@ -1,3 +1,3 @@
 # Advanced_Database_Systems
 username: gym-admin
-p/word: CRj7qlLQfKLI4j2z
+p/word: V2V2Af0k96dG6xnp
