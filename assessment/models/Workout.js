@@ -10,7 +10,7 @@ const workoutSchema = new Schema(
     twitter_handle: String,
     age: Number,
     designation: String,
-    variety: String,
+    healthy: String,
     province: String,
     country: String,
     winery: String,
