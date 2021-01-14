@@ -1,4 +1,2 @@
 # Advanced_Database_Systems_Assignment
-username: gym-admin
-p/word: jgKQB4F0tEs1VCZn
 In order to run the app in the command line, you must first download the keroku CLI. Here is a link to download the heroku CLI: https://devcenter.heroku.com/articles/heroku-cli . Once you have downloaded the heroku CLI you can then login into heroku there using the command "heroku login". 
