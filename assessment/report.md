@@ -1,10 +1,14 @@
 TITLE & COVER PAGE:
-Link to hosted web app.
+Link to hosted web app: 
+https://radiant-brook-33331.herokuapp.com
+https://git.heroku.com/radiant-brook-33331.git 
+
 Link to your hosted Git Repository should include:
 - Professional README.md file. Should contain info on how to run the project in development & production.
 - Your projects, version-controlled source files.
 
-Here is the link to my github repository: https://github.com/CMayo64/Advanced_Database_Systems_Assignment all my stuff is on the "master" branch not the "main" branch.
+Here is the link to my github repository: 
+https://github.com/CMayo64/Advanced_Database_Systems_Assignment all of my code is on the "master" branch not the "main" branch.
 
 INTRODUCTION:
 Should pull together & summmarise entire project. You may, want to pull in stats to underpin your argument as to why this project was required.

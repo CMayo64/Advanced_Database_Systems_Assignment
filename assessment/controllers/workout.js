@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const { findById } = require("../models/Name");
 exports.list = async (req, res) => {
   const perPage = 10;
-  const limit = parseInt(req.query.limit) || 10; // Make sure to parse the limit to number
+  const limit = parseInt(req.query.limit) || 10;
   const page = parseInt(req.query.page) || 1;
   const message = req.query.message;
   try {
