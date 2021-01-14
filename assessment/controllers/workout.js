@@ -1,7 +1,7 @@
 const Workout = require("../models/Workout");
 const Name = require("../models/Name");
 const GymUser = require("../models/GymUser");
-const Region = require("../models/Region");
+const Region = require("../models/Age");
 const Province = require("../models/Province");
 const bodyParser = require("body-parser");
 const { findById } = require("../models/Name");

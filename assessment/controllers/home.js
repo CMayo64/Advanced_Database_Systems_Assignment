@@ -1,25 +1,19 @@
-const Tasting = require('../models/Tasting');
-
+const Tasting = require('../models/Workout');
 exports.list = async (req, res) => {
     console.log(req.session);
     try {
-
-        /**
-         *
-            db.tastings.aggregate([
-                      {$match:  {taster_name: { $ne: null }}},
-                      {$group: {_id: "$taster_name", total: { $sum: 1} }},
-                      {$count: "number of tasters"}
-                      ])
-         */
-
-        const totalTastings = await Tasting.find({}).count();
-        const totalCountries = await Tasting.aggregate([
+        db.Workouts.aggregate([
+                  {$match:  {Workout_name: { $ne: null }}},
+                  {$group: {_id: "$Workout_name", total: { $sum: 1} }},
+                  {$count: "number of workouts"}
+                  ])
+        const totalWorkouts = await Workout.find({}).count();
+        const totalCountries = await Workout.aggregate([
             { $group: { _id: "$country", total: { $sum: 1 } } },
             { $count: "total" }
         ])
         console.log(totalCountries)
-        const tasterCountSummaryRef = await Tasting.aggregate(
+        const tasterCountSummaryRef = await Workout.aggregate(
             [
                 { $match: { taster_name: { $ne: null } } },
                 {
