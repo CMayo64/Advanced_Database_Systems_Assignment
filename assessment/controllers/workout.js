@@ -1,10 +1,10 @@
 const Workout = require("../models/Workout");
-const Country = require("../models/Country");
-const Taster = require("../models/Taster");
+const Name = require("../models/Name");
+const GymUser = require("../models/GymUser");
 const Region = require("../models/Region");
 const Province = require("../models/Province");
 const bodyParser = require("body-parser");
-const { findById } = require("../models/Country");
+const { findById } = require("../models/Name");
 
 
 exports.list = async (req, res) => {
@@ -15,8 +15,8 @@ exports.list = async (req, res) => {
 
 
   try {
-    const workouts = await Workout.find({}).skip((perPage * page) - perPage).limit(limit);
-    const count = await Workout.find({}).count();
+    const workouts = await GymUser.find({}).skip((perPage * page) - perPage).limit(limit);
+    const count = await GymUser.find({}).count();
     const numberOfPages = Math.ceil(count / perPage);
 
     res.render("workouts", {
@@ -33,16 +33,16 @@ exports.list = async (req, res) => {
 exports.edit = async (req, res) => {
   const id = req.params.id;
   try {
-    const countries = await Country.find({});
-    const tasters = await Taster.find({});
+    const names = await Name.find({});
+    const GymUsers = await GymUser.find({});
     const regions = await Region.find({});
     const workout = await Workout.findById(id);
     if (!workout) throw Error('cant find workout');
     res.render('update-workout', {
       regions: regions,
       workout: workout,
-      countries: countries,
-      tasters: tasters,
+      names: names,
+      GymUsers: GymUsers,
       id: id,
       errors: {}
     });
@@ -53,7 +53,7 @@ exports.edit = async (req, res) => {
       return;
     }
     res.status(404).send({
-      message: `could find taster ${id}`,
+      message: `could find gym user ${id}`,
     });
   }
 };
@@ -61,13 +61,13 @@ exports.edit = async (req, res) => {
 exports.create = async (req, res) => {
   try {
 
-    const taster = await Taster.findById(req.body.taster_id);
+    const GymUser = await GymUser.findById(req.body.GymUser_id);
     await Torkout.create({
       title: req.body.title,
-      taster_name: taster.name,
-      taster_twitter_handle: taster.twitter_handle,
+      GymUser_name: GymUser.name,
+      GymUser_twitter_handle: GymUser.twitter_handle,
       points: parseInt(req.body.points),
-      taster_id: req.body.taster_id,
+      GymUser_id: req.body.GymUser_id,
       regions: req.body.regions
     })
 
@@ -85,12 +85,12 @@ exports.create = async (req, res) => {
 
 exports.createView = async (req, res) => {
   try {
-    const countries = await Country.find({});
-    const tasters = await Taster.find({});
+    const names = await Name.find({});
+    const GymUsers = await GymUser.find({});
     const regions = await Region.find({});
     res.render("create-workout", {
-      countries: countries,
-      tasters: tasters,
+      names: names,
+      GymUsers: GymUsers,
       regions: regions,
       errors: {}
     });

@@ -6,9 +6,9 @@ const workoutSchema = new Schema(
     points: Number,
     title: String,
     description: String,
-    taster_name: String,
-    taster_twitter_handle: String,
-    price: Number,
+    name: String,
+    twitter_handle: String,
+    age: Number,
     designation: String,
     variety: String,
     province: String,
@@ -23,13 +23,13 @@ const workoutSchema = new Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Province",
     },
-    taster_id: {
+    name: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Taster",
+      ref: "Workout",
     },
     regions: [{ type: mongoose.Schema.Types.ObjectId, ref: "Region" }],
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Tasting", tastingSchema);
+module.exports = mongoose.model("Workout", workoutSchema);

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const tasterSchema = new Schema(
+const gymUserSchema = new Schema(
   {
     twitter: String,
     tastings: { type: Number, default: 0 },
@@ -10,4 +10,4 @@ const tasterSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Taster", tasterSchema);
+module.exports = mongoose.model("Gym User", gymUserSchema);
