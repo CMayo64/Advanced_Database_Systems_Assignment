@@ -38,7 +38,7 @@ async function main() {
 
     /**
      * This perhaps appears a little more complex than it is. Below, we are
-     * grouping the wine tasters and summing their total workout-records. Finally,
+     * grouping the wine workouts and summing their total workout-records. Finally,
      * we tnamey up the output so it represents the format we need for our new collection
      */
 

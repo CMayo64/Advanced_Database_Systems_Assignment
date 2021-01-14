@@ -7,13 +7,11 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="description" content="" />
-    <title>World Wines</title>
-
+    <title>Exercise Data</title>
     <link
       rel="canonical"
       href="https://getbootstrap.com/docs/4.5/examples/album/"
     />
-
     <!-- Bootstrap core CSS -->
     <link
       rel="stylesheet"
@@ -21,7 +19,6 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -31,36 +28,26 @@
         -ms-user-select: none;
         user-select: none;
       }
-
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="css/album.css" rel="stylesheet" />
   </head>
   <body>
     <%- include('common/header'); -%>
-
     <main role="main">
       <section class="jumbotron text-center">
         <div class="container">
-          <h1>The Greatest Collection of Wine Reviews in the World</h1>
+          <h1>A collection of Exercise Data</h1>
           <p class="lead text-muted">Search, Explore and Favourite.</p>
-          <h2>
-            <strong><%= totalTastings %></strong> reviews from wines originating
-            from <strong><%= totalCountries %></strong> different countries.
-            Lovingly crafted by <strong><%= totalTasters %></strong> tasters
-          </h2>
         </div>
       </section>
-
       <div class="album py-5 bg-light">
         <div class="container">
           <div class="row">
-            <% tasterCountSummary.forEach(taster => { %>
+            <% GymUserCountSummary.forEach(GymUser => { %>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
                 <svg
@@ -71,17 +58,17 @@
                   preserveAspectRatio="xMidYMid slice"
                   focusable="false"
                   role="img"
-                  aria-label="Placeholder: Joe Appleton"
+                  aria-label="Placeholder: Charlie M"
                 >
-                  <title>Joe Appleton</title>
+                  <title>Charlie M</title>
                   <rect width="100%" height="100%" fill="#55595c" />
                   <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                    <%= taster.name %>
+                    <%= GymUser.name %>
                   </text>
                 </svg>
                 <div class="card-body">
                   <p class="text-center">
-                    <strong> <%= taster.total %> Reviews</strong>
+                    <strong> <%= GymUser.total %> Workouts </strong>
                   </p>
                   <div
                     class="d-flex justify-content-between align-items-center"
@@ -103,7 +90,6 @@
         </div>
       </div>
     </main>
-
     <%- include('common/footer') -%>
   </body>
 </html>

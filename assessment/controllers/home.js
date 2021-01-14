@@ -22,7 +22,6 @@ exports.list = async (req, res) => {
                         total: { $sum: 1 }
                     }
                 }]);
-
         const tasterCountSummary = tasterCountSummaryRef.map(t => ({ name: t._id, total: t.total }));
         res.render("index", { tasterCountSummary: tasterCountSummary, totalTastings: totalTastings, totalTasters: tasterCountSummary.length, totalCountries: totalCountries[0].total });
 

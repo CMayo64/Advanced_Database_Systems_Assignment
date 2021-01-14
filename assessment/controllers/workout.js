@@ -1,8 +1,8 @@
 const Workout = require("../models/Workout");
 const Name = require("../models/Name");
 const GymUser = require("../models/GymUser");
-const Region = require("../models/Age");
-const Province = require("../models/Province");
+const Age = require("../models/Age");
+const CurrentLevel = require("../models/CurrentLevel");
 const bodyParser = require("body-parser");
 const { findById } = require("../models/Name");
 exports.list = async (req, res) => {
@@ -29,11 +29,11 @@ exports.edit = async (req, res) => {
   try {
     const names = await Name.find({});
     const GymUsers = await GymUser.find({});
-    const regions = await Region.find({});
+    const ages = await Age.find({});
     const workout = await Workout.findById(id);
     if (!workout) throw Error('cant find workout');
     res.render('update-workout', {
-      regions: regions,
+      ages: ages,
       workout: workout,
       names: names,
       GymUsers: GymUsers,
@@ -54,13 +54,13 @@ exports.edit = async (req, res) => {
 exports.create = async (req, res) => {
   try {
     const GymUser = await GymUser.findById(req.body.GymUser_id);
-    await Torkout.create({
+    await Workout.create({
       title: req.body.title,
       GymUser_name: GymUser.name,
       GymUser_twitter_handle: GymUser.twitter_handle,
       points: parseInt(req.body.points),
       GymUser_id: req.body.GymUser_id,
-      regions: req.body.regions
+      ages: req.body.ages
     })
     res.redirect('/workouts/?message=workout has been created')
   } catch (e) {
@@ -77,16 +77,16 @@ exports.createView = async (req, res) => {
   try {
     const names = await Name.find({});
     const GymUsers = await GymUser.find({});
-    const regions = await Region.find({});
+    const ages = await Age.find({});
     res.render("create-workout", {
       names: names,
       GymUsers: GymUsers,
-      regions: regions,
+      ages: ages,
       errors: {}
     });
   } catch (e) {
     res.status(404).send({
-      message: `could not generate create data`,
+      message: `could not generate data`,
     });
   }
 }
@@ -97,7 +97,7 @@ exports.delete = async (req, res) => {
     res.redirect("/workouts");
   } catch (e) {
     res.status(404).send({
-      message: `could not delete  record ${id}.`,
+      message: `could not delete record ${id}.`,
     });
   }
 };
