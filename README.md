@@ -1,2 +1,2 @@
 # Advanced_Database_Systems_Assignment
-In order to run the project in the command line, you must first download the heroku CLI. Here is a link to download the heroku CLI: https://devcenter.heroku.com/articles/heroku-cli. Once you have downloaded the heroku CLI you can then login into heroku there using the command "heroku login". 
+This is a project for my Advanced Database Systems Assignment with my web app, report and wireframes inside. The web app aims to provide the user with a way to track their exercise, eating habbits and allows them to ensure they are meeting their exercising goals.
