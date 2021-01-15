@@ -18,7 +18,7 @@ async function main() {
     }
 
     //This is a loader module that displays a spinner to the command line
-    const load = loading("importing the gym data!!").start();
+    const load = loading("Importing the gym data!!").start();
 
     //Import JSON data into the database
     const data = await fs.readFile(path.join(__dirname, "fitness.json"), "utf8");
@@ -45,7 +45,7 @@ async function main() {
     ]);
     load.stop();
     console.info(
-      `Gym collection set up! \n I've also created a workouts collection`
+      `Gym collection set up! \n I have also created a workouts collection`
     );
     process.exit();
   } catch (error) {
