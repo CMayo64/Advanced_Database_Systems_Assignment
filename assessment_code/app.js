@@ -20,7 +20,7 @@ app.set("view engine", "ejs");
 const { PORT, MONGODB_URI } = process.env;
 
 //Connect to database
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 mongoose.connection.on("error", (err) => {
   console.error(err);
   console.log(
