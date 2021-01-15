@@ -8,7 +8,6 @@ exports.login = async (req, res) => {
             res.render('login-user', { errors: { email: { message: 'email not found' } } })
             return;
         }
-
         const match = await bcrypt.compare(req.body.password, user.password);
         if (match) {
             req.session.userID = user._id;
@@ -16,20 +15,15 @@ exports.login = async (req, res) => {
             res.redirect('/');
             return
         }
-
         res.render('login-user', { errors: { password: { message: 'password does not match' } } })
-
-
     } catch (e) {
         return res.status(400).send({
             message: JSON.parse(e),
         });
     }
 }
-
 exports.create = async (req, res) => {
     try {
-
         const user = new User({ email: req.body.email, password: req.body.password });
         await user.save();
         res.redirect('/?message=user saved')
