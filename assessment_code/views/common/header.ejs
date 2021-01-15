@@ -6,11 +6,9 @@
         <a class="nav-link active" href="/">
           Home <span class="sr-only">(current)</span>
         </a>
-        <a class="nav-link" href="#"> Search Exercises </a>
-        <a class="nav-link" href="GymUsers"> Gym Users</a>
-        <a class="nav-link" href="workouts"> Workouts</a>
+        <a class="nav-link" href="create-workout"> Add Workout</a>
         <% if(user) { %>
-        <a class="nav-link" href="create-workout"> Create a workout </a>
+        <a class="nav-link" href="workouts"> View Workout </a>
         <a class="nav-link" href="logout"> <%= user.email %> (Logout) </a> <%
         }%> <% if(!user) { %>
         <a class="nav-link" href="login"> Login </a>
@@ -20,4 +18,3 @@
     </div>
   </nav>
 </header>
-;

@@ -33,7 +33,7 @@ mongoose.connection.on("error", (err) => {
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(expressSession({ secret: 'foo barr', saveUninitialized: true, resave: true, useCreateIndex: true, cookie: { expires: new Date(253402300000000) } }));
+app.use(expressSession({ secret: 'foo barr', saveUninitialized: true, resave: true, cookie: { expires: new Date(253402300000000) } }));
 app.use("*", async (req, res, next) => {
   global.user = false;
   if (req.session.userID && !global.user) {
@@ -42,6 +42,8 @@ app.use("*", async (req, res, next) => {
   }
   next();
 })
+
+mongoose.set('useCreateIndex', true);
 
 const authMiddleware = async (req, res, next) => {
   const user = await User.findById(req.session.userID);

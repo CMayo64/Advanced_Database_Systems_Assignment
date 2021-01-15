@@ -22,6 +22,8 @@ High-level overview of how system functions, can use screen shots if it helps. S
 - Including a diagram of the key system components & how they are linked.
 
 KEY DESIGN DECISIONS
+I have created wireframes for each my web app, which I have included in the folder titled "wireframes".
+
 One of the key decisions I made when designing my app was to... 
 
 Should rationalise the choices you made in designing your app
