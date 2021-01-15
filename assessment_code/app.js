@@ -33,6 +33,7 @@ mongoose.connection.on("error", (err) => {
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(saveUninitialized, true);
 app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }));
 app.use("*", async (req, res, next) => {
   global.user = false;
@@ -42,6 +43,7 @@ app.use("*", async (req, res, next) => {
   }
   next();
 })
+
 const authMiddleware = async (req, res, next) => {
   const user = await User.findById(req.session.userID);
   if (!user) {
