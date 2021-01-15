@@ -91,4 +91,4 @@ app.listen(PORT, () => {
     `Example app listening at http://localhost:${PORT}`,
     chalk.green("✓")
   );
-});
+})
