@@ -45,6 +45,7 @@ app.use("*", async (req, res, next) => {
 
 app.use(session(
   {
+    resave: true,
     saveUninitialized: true,
   }
 ));
