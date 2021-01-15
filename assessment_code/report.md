@@ -35,6 +35,6 @@ My database is quite secure, because in order to be able to access it (to modify
 Identify in what ways your app is secure & scalable.
 
 CONCLUSION AND REFLECTION:
-Overall this project challenged me to use everything that I have learnt on the course to create my web app. As well as eeverything I learnt in class it also challenged me to think outside the box about how to go about creating a web app from scratch.
+Overall this project challenged me to use everything that I have learnt on the course to create my web app. As well as everything I learnt in class it also challenged me to think outside the box about how to go about creating a web app from scratch.
 
 Bring document to a close by tying together the process, and provide me with a brief reflective account of the entire project.

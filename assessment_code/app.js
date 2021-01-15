@@ -19,7 +19,7 @@ app.set("view engine", "ejs");
 const { PORT, MONGODB_URI } = process.env;
 
 //Connect to database
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on("error", (err) => {
   console.error(err);
   console.log(
@@ -33,7 +33,7 @@ mongoose.connection.on("error", (err) => {
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(expressSession({ secret: 'foo barr', saveUninitialized: true, resave: true, cookie: { expires: new Date(253402300000000) } }));
+app.use(expressSession({ secret: 'foo barr', saveUninitialized: true, resave: true, useCreateIndex: true, cookie: { expires: new Date(253402300000000) } }));
 app.use("*", async (req, res, next) => {
   global.user = false;
   if (req.session.userID && !global.user) {

@@ -45,8 +45,8 @@ async function main() {
     ]);
 
     //Output the results of aggregate into new collection
-    const exerciseGymuser = await wineGymUserRef.toArray();
-    await db.collection("gymUsers").insertMany(exerciseGymuser);
+    const Gymuser = await wineGymUserRef.toArray();
+    await db.collection("gymUsers").insertMany(Gymuser);
 
     //Reference each document in the workouts collection to a taster id. 
     //Then take tidy up ages, adding them to an array
