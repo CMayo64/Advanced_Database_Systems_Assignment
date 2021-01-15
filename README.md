@@ -1,2 +1,2 @@
 # Advanced_Database_Systems_Assignment
-This is a project for my Advanced Database Systems Assignment with my web app, report and wireframes inside. The web app aims to provide the user with a way to track their exercise and eating habbits and my web app aims to provide the user with a way to make sure they are meeting their exercising goals.
+This is a project for my Advanced Database Systems Assignment with my web app, report and wireframes inside. The web app aims to provide the user with a way to track their exercise and eating habbits and provide the user with a way to make sure they are meeting their exercising goals.
