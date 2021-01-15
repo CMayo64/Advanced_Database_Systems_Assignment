@@ -43,6 +43,64 @@ async function main() {
         },
       },
     ]);
+
+    //Output the results of aggregate into new collection
+    const exerciseGymuser = await wineGymUserRef.toArray();
+    await db.collection("gymUsers").insertMany(exerciseGymuser);
+
+    //Reference each document in the workouts collection to a taster id. 
+    //Then take tidy up ages, adding them to an array
+    const updatedGymuserRef = db.collection("gymUsers").find({});
+    const updatedGymusers = await updatedGymuserRef.toArray();
+    updatedGymusers.forEach(async ({ _id, name }) => {
+      await db.collection("workouts").updateMany({ gymUser_name: name }, [
+        {
+          $set: {
+            gymUser_id: _id,
+            age: ["age"],
+          },
+        },
+      ]);
+    });
+
+    //Get rid of age off of root document, as placed them in an array
+    await db
+      .collection("workouts")
+      .updateMany({}, { $unset: { age: ""} });
+
+    //Lastly, remove null ages from collection of arrays
+    await db
+      .collection("workouts")
+      .updateMany({ ages: { $all: [null] } }, [
+        { $set: { ages: [{ $arrayElemAt: ["$ages", 0] }] } },
+      ])
+
+    db.collection("workouts").aggregate([
+      { $group: { _id: "$healthy" } },
+      { $project: { name: "$_id", "_id": 0 } },
+      { $out: "healyness" }
+    ]).toArray();
+
+    await db.collection("workouts").aggregate([
+      { $group: { _id: "$currentLevel" } },
+      { $project: { name: "$_id", "_id": 0 } },
+      { $out: "Current_Level" }
+    ]).toArray()
+
+    await db.collection("workouts").aggregate([
+      { $unwind: "$ages" },
+      { $group: { _id: "$ages" } },
+      { $project: { name: '$_id', _id: 0 } },
+      { $out: "ages" }
+    ]).toArray();
+
+    await db.collection("workouts").aggregate([
+      { $unwind: "$ages" },
+      { $group: { _id: "$ages" } },
+      { $project: { name: "$_id", "_id": 0 } },
+      { $out: "ages" }
+    ]).toArray()
+
     load.stop();
     console.info(
       `Gym collection set up! \n I have also created a workouts collection`

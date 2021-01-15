@@ -6,7 +6,6 @@ const chalk = require("chalk");
 const bodyParser = require("body-parser");
 const expressSession = require("express-session");
 const User = require("./models/User");
-const session = require('express-session');
 
 //Controllers 
 const gymUserController = require("./controllers/gymUser");
